@@ -4,6 +4,10 @@ let start = document.querySelector("button");
 let timer = document.querySelector(".timer");
 let result = document.querySelector(".score");
 let level = document.querySelector(".level");
+let help = document.querySelector(".rules");
+let guide = document.querySelector("#guide");
+let playAgain = document.querySelector(".play-again");
+let message = document.querySelector(".message");
 
 
 
@@ -294,6 +298,7 @@ let gameOver = function (){
         clearInterval(collisonCheckId);
         clearInterval(fall_Id);
         clearInterval(rightTimerId);
+        playAgain.style.visibility = "visible";
     }
 }
 
@@ -357,6 +362,8 @@ let countdown = function (){
 
 
 start.addEventListener("click", ()=>{
+    guide.style.visibility = "hidden"
+    help.style.visibility = "hidden"
     console.log("start button was pressed")
     createPlatforms();
     createDoodler();
@@ -364,6 +371,20 @@ start.addEventListener("click", ()=>{
     start.style.visibility = "hidden";
     timer.style.visibility = "visible";
     countdown()
+})
+
+
+help.addEventListener("click",()=>{
+    guide.style.visibility = "visible";
+    help.style.visibility = "hidden";
+})
+
+
+
+
+playAgain.addEventListener("click",()=>{
+    message.style.visibility = "visible"
+    playAgain.style.visibility = "hidden"
 })
 
 
