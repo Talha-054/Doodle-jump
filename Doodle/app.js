@@ -285,7 +285,7 @@ let checkCollision = function () {
 
 
 let gameOver = function (){
-    if (doodlerBottom <= 0){
+    if (doodlerBottom <= 5){
         clearInterval(gameOverId)
         isGameOver = true;
         timer.innerHTML = score;
